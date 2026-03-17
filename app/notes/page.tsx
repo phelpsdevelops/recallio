@@ -1,6 +1,6 @@
 "use client";
 
-import { AppShell, PageShell, Card, Button } from "../../components/ui";
+import { AppShell, PageShell, Button } from "../../components/ui";
 import { useAuth } from "../../components/authContext";
 import Link from "next/link";
 
@@ -29,14 +29,9 @@ export default function NotesPage() {
         }
       >
         {notes.length === 0 ? (
-          <Card className="py-12 text-center">
-            <p className="text-sm text-zinc-600 dark:text-zinc-400">
-              No notes yet. Start by creating a new note.
-            </p>
-            <Link href="/notes/new">
-              <Button className="mt-4">Begin New Notes</Button>
-            </Link>
-          </Card>
+          <p className="text-sm text-zinc-600 dark:text-zinc-400">
+            You have no notes yet
+          </p>
         ) : (
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {/* Notes will be listed here */}
